@@ -33,6 +33,11 @@ ${jsonencode(
         "arn:aws:ssm:${region}:${account_id}:parameter/config/backend*"
       ]
     }
+    {
+          "Effect": "Allow",
+          "Action": "sns:Publish",
+          "Resource": "arn:aws:sns:eu-central-1:257394465392:MyTestTopic"
+    }
   ]
 }
 )

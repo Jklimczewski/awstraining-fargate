@@ -14,7 +14,7 @@ function checkSyntax(){
 
 function printSyntax() {
     echo "Syntax: run.sh"
-    echo "Requires the HUB and STAGE environment variables to be properly set"
+    echo "Requires the HUB and  STAGE environment variables to be properly set"
 }
 
 checkSyntax
