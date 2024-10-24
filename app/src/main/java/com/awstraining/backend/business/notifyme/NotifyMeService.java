@@ -1,5 +1,7 @@
 package com.awstraining.backend.business.notifyme;
 
+import com.amazonaws.services.translate.model.TranslateTextRequest;
+import com.amazonaws.services.translate.model.TranslateTextResult;
 import com.awstraining.backend.business.notifyme.adapter.SentimentDetectorImpl;
 import org.springframework.stereotype.Service;
 
@@ -27,8 +29,9 @@ public class NotifyMeService {
     }
     
     public String notifyMe(NotifyMeDO notifyMe) {
-        String text = notifyMe.text();
-        messageSender.send(text);
+        final String translatedMessage = translator.translate(notifyMe);
+        messageSender.send(translatedMessage);
+        return translatedMessage;
         // TODO: lab1
         //  1. Send text using sender.
         //  2. Return sent message.
@@ -38,7 +41,6 @@ public class NotifyMeService {
         // TODO: lab3
         //  1. Detect sentiment of translated message.
         //  2. Change sending of text to "setiment: translated text" and return it.
-        return text;
     }
     
 }

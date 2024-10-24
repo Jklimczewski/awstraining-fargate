@@ -37,7 +37,12 @@ ${jsonencode(
           "Effect": "Allow",
           "Action": "sns:Publish",
           "Resource": "arn:aws:sns:eu-central-1:257394465392:MyTestTopic"
-    }
+    },
+    {
+          "Effect": "Allow",
+          "Action": "translate:TranslateText",
+          "Resource": "*"
+        }
   ]
 }
 )
