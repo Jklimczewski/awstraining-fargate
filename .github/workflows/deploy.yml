@@ -1,3 +1,4 @@
+#
 name: Deploy application
 run-name: Deploy ${{ inputs.tag }} to ${{ inputs.destinationHubEnv }} from ${{ inputs.sourceHubEnv }}
 
